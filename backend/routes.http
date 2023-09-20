@@ -13,9 +13,21 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/video/0a3b79a3-7050-4176-8bfc-3774756d5490/transcription
+POST http://localhost:3333/video/01efaad7-81e9-42e3-8e9b-40c4ad961c35/transcription
 Content-Type: application/json
 
 {
-  "prompt": "Voices in 60hz"
+  "prompt": "Jogando no PC Novo, rodando liso na ironia"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/generate
+Content-Type: application/json
+
+{
+  "videoId": "01efaad7-81e9-42e3-8e9b-40c4ad961c35",
+  "temperature": 0.5,
+  "prompt": "Gere um resumo da transcrição do vídeo informada a seguir: '''{transcription}'''"
 }
